@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Inter Global Logistics</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <section class="tracking-result">
+  <h2>Shipment Tracking</h2>
+
+  <div id="resultBox"></div>
+</section>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+
+  const resultBox = document.getElementById("resultBox");
+
+  if (code) {
+    resultBox.innerHTML = `
+      <p><strong>Tracking ID:</strong> ${code}</p>
+      <p><strong>Status:</strong> In Transit</p>
+      <p><strong>Location:</strong> New York, USA</p>
+      <p><strong>Estimated Delivery:</strong> April 15, 2026</p>
+    `;
+  }
+</script>
+ </body>
+ </html>
