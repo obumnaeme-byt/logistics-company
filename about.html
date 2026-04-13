@@ -100,6 +100,13 @@
   <p>© 2026 Inter Global Logistics. All rights reserved.</p>
 </footer>
 
-<script src="node.js"></script>
+<script>
+      const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav-links');
+
+  toggle.onclick = () => {
+    nav.classList.toggle('active');
+  }
+    </script>
 </body>
 </html>
