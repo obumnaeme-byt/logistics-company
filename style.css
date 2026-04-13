@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+* {
+  transition: all 0.3s ease;
+}
+
+button {
+  border-radius: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.card, .service-card {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
 
 nav{
     display: flex;
