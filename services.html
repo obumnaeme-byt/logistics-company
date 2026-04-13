@@ -39,7 +39,7 @@
       </ul>
 
     </nav>
-    </header>
+    
 
 <section class="services-page">
   <h1>Our Services</h1>
@@ -72,6 +72,14 @@
 
   </div>
 </section>
-    <script src="node.js"></script>
+</header>
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav-links');
+
+  toggle.onclick = () => {
+    nav.classList.toggle('active');
+  }
+    </script>
 </body>
 </html>
