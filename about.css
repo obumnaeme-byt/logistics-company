@@ -113,7 +113,7 @@ footer {
   .menu-toggle {
     display: block;
     margin-left: 80%;
-    position: fixed;
+    
     
   }
 
@@ -124,6 +124,7 @@ footer {
     top: 60px;
     right: 0;
     width: 30%;
+
     background: #fff;
     flex-direction: column;
     display: none;
@@ -131,8 +132,10 @@ footer {
   }
 
   .nav-links li {
-    padding: 5px 0;
-    
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    text-align: center;
   }
 
   .nav-links.active {
