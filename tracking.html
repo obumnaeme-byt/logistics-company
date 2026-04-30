@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inter Global Logistics </title>
+  <title> Track Shipment </title>
 
   <link rel="stylesheet" href="about.css">
   <!-- Font link -->
@@ -45,10 +45,68 @@
   <h2>Shipment Tracking</h2>
 
   <div id="resultBox"></div>
+  <div id="result" class="result-box"></div>
 </section>
+<style>
+  .result-box {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+}
 
+.header {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #222;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #28a745;
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.details {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.timeline {
+  border-left: 3px solid #007bff;
+  padding-left: 15px;
+  margin-top: 20px;
+}
+
+.event {
+  margin-bottom: 20px;
+}
+
+.event strong {
+  display: block;
+  color: #222;
+}
+
+.event span {
+  font-size: 13px;
+  color: #666;
+}
+
+
+</style>
 <script>
-  const params = new URLSearchParams(window.location.search);
+  /*const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
 
   const resultBox = document.getElementById("resultBox");
@@ -60,7 +118,7 @@
       <p><strong>Location:</strong> New York, USA</p>
       <p><strong>Estimated Delivery:</strong> April 15, 2026</p>
     `;
-  }
+  }*/
 
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
@@ -68,6 +126,66 @@
   toggle.onclick = () => {
     nav.classList.toggle('active');
   }
+const trackingData = {
+  trackingNumber: "IGL8980982627",
+  status: "Ready for Pickup",
+  origin: "Syria",
+  destination: "Brazil",
+  history: [
+    {
+      date: "April 25, 2026",
+      location: "Syria",
+      info:"In transit",
+      message: "Shipment dispatched from origin facility"
+    },
+    {
+      date: "April 27, 2026",
+      location: "Brazil",
+      info: "Arrived",
+      message: "Arrived at destination facility"
+    },
+    {
+      date: "April 27, 2026",
+      location: "Brazil",
+     info: "Hello Edivan Mendes Farias Folha, your package from Inter Global Logistics is now ready!",
+      message: "Ready for pickup"
+    }
+  ]
+};
+
+function displayTracking() {
+  const resultDiv = document.getElementById("result");
+
+  let html = `
+    <div class="header">
+      <h2>Shipment Tracking</h2>
+      <div class="status">${trackingData.status}</div>
+    </div>
+
+    <div class="details">
+      <strong>Tracking Number:</strong> ${trackingData.trackingNumber}<br>
+      <strong>Origin:</strong> ${trackingData.origin}<br>
+      <strong>Destination:</strong> ${trackingData.destination}
+    </div>
+
+    <div class="timeline">
+  `;
+
+  trackingData.history.forEach(event => {
+    html += `
+      <div class="event">
+        <strong>${event.message}</strong>
+        <span>${event.date} • ${event.location}</span>
+        <li>${event.info}</li>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+  resultDiv.innerHTML = html;
+}
+
+displayTracking();
 </script>
  </body>
  </html>

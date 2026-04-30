@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,7 @@
   <!-- end of  font link -->
 </head>
 
-<body>
+<body id="output">
   <header>
     <nav>
       <div class="nav-logo"><img src="images/inter.jpeg" alt="interglobal"></div>
@@ -39,7 +39,7 @@
       </ul>
 
     </nav>
-
+  </header>
     <section class="tracking">
       <h1 class="WLC"><strong>WELCOME TO INTER GLOBAL LOGISTIC</strong> </h1>
       <h1> <span class="material-symbols-outlined">
@@ -47,8 +47,9 @@
         </span> TRACK YOUR SHIPMENT </h1>
       <P> Enter Your Air WayBill (AWB) or tracking Number To Continue </P>
       <div class="tracking-box">
+      <p id="errormsg"></p>
       <input type="text" id="trackingInput" placeholder="Enter tracking code"><br>
-      <button onclick="trackPackage()">TRACK</button>
+      <button onclick="validatingId()">TRACK</button>
       </div>
     </section>
 
@@ -223,7 +224,7 @@
       </div>
     </section>
 
-    <section class="stats">
+    <section class="stats counter-section">
   <div class="stat">
     <h2 class="counter" data-target="5000">0</h2>
     <p>Deliveries Completed</p>
@@ -289,14 +290,21 @@
     </div>
 
   </div>
+<div id="map" style="height: 300px; margin-top:20px;"></div>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   <!-- Bottom -->
   <div class="footer-bottom">
     <p>© 2026 Inter Global Logistics. All rights reserved.</p>
   </div>
 </footer>
-  </header>
   <script src="node.js"></script>
+  <script>
+      window.onload = function () {
+    document.documentElement.lang = "pt-BR";
+  };
+</script>
+  </script>
 </body>
 
 </html>

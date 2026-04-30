@@ -39,6 +39,7 @@ nav{
     position: sticky;
     top: 0;
     border-bottom: #753030 3px solid;
+    
 }
 
 nav img{
@@ -93,10 +94,19 @@ h1{
 
 input{
     margin: 20px;
+    margin-top: 4px;
     width: 40%;
     padding: 5px;
 }
 
+.tracking-box{
+  margin-top:15px;
+  p{
+    font-size: 12px;
+    display:none;
+    
+  }
+}
 button{
     background-color:  rgb(188, 73, 73);
     color: white;
